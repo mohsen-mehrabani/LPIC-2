@@ -1,0 +1,15 @@
+Monitoring ram
+top, htop, free
+
+Monitoring commands
+vmstat, top, htop, iotop, sar, sysstat, lsof (list open files), lsof -u user, 
+
+Monitoring Network
+netstat 
+-ie   --> interface # ifconfig
+-s    --> statistic
+-tuna --> useful info
+iftop --> track down trouble makers
+nload --> graph bandwidth
+
+
