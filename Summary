@@ -12,4 +12,17 @@ netstat
 iftop --> track down trouble makers
 nload --> graph bandwidth
 
+Measuring Network
+iperf server/client 
+speedtest # speedtest.py on https://github.com/sivel/speedtest-cli/blob/master/speedtest.py
 
+Monitoring Data using collectd
+1.centos: yum install collectd
+for ubuntu
+2. configuration file: /etc/collectd.conf and enable what you whant to monitor
+3. restart the collectd services. systemctl collectd restart
+4. install apache 2 for using collection.cgi in /usr/share/doc/collectd/example
+5. sudo a2enmod cgi --> enable  service --> sudo syctemctle restart apache2
+6. sudo cp /usr/share/doc/collectd/collection.cgi /usr/lib/cgi-bin
+7. sudo apt-get install librrds-perl libconfig-general-perl libhtml-parser-perl  libregexp-common-perl
+8. http://localhost/cgi-bin/collection.cgi
