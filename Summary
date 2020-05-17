@@ -17,8 +17,13 @@ iperf server/client
 speedtest # speedtest.py on https://github.com/sivel/speedtest-cli/blob/master/speedtest.py
 
 Monitoring Data using collectd
-1.centos: yum install collectd
+for centos
+1.yum install epel-release
+2.yum install collectd
+3. yum install collectd.web
+
 for ubuntu
+1.sudo apt-get install collectd
 2. configuration file: /etc/collectd.conf and enable what you whant to monitor
 3. restart the collectd services. systemctl collectd restart
 4. install apache 2 for using collection.cgi in /usr/share/doc/collectd/example
@@ -26,3 +31,32 @@ for ubuntu
 6. sudo cp /usr/share/doc/collectd/collection.cgi /usr/lib/cgi-bin
 7. sudo apt-get install librrds-perl libconfig-general-perl libhtml-parser-perl  libregexp-common-perl
 8. http://localhost/cgi-bin/collection.cgi
+
+
+Linux Kernel 201
+Objective 201.1: Weight = 2
+Kernel 2.6.
+Initially, a kernel version number consisted of three parts: major release number, minor release number and the patch level,
+all separated by periods.Even-numbered minor releases, e.g. 2.2, 2.4, were considered stable releases and odd-numbered 
+releases, e.g. 2.1, 2.3, 2.5 were considered to be development releases.
+
+In 2004, after the release of 2.6.0, the versioning system was changed, and it was decided that a time-based release cycle 
+would be adopted. For the next seven years the kernel remained at 2.6 and the third number was increased with each new 
+release (which happend every two or three months). A fourth number was added to account for bug and security fixes. An
+example of this scheme is kernel 2.6.32.71. The even-odd numbering system was no longer used.
+
+On 29 May 2011, Linus Torvalds announced the release of kernel version 3.0.0 in honour of the 20th anniversary of Linux
+In April 2015 kernel version 4.0.0 was released.
+
+
+
+
+
+
+
+
+
+
+
+
+
