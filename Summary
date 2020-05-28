@@ -51,7 +51,18 @@ On 29 May 2011, Linus Torvalds announced the release of kernel version 3.0.0 in 
 In April 2015 kernel version 4.0.0 was released.
 
 
+Manipulating Kernel Modules
 
+uname -r
+modules location /lib/modules
+lsmod for listting the modules, rmmod for removing modules and the insmod for inserting modules
+insmod does not support appendencies
+modules.dep contains the all dependencies
+depmod -d make dependencies
+modprobe and modeprobe -r
+modinfo lists the modules information
+
+Kernel Automation and Configuration
 
 
 
