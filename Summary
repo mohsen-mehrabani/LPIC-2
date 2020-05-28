@@ -31,6 +31,8 @@ for ubuntu
 6. sudo cp /usr/share/doc/collectd/collection.cgi /usr/lib/cgi-bin
 7. sudo apt-get install librrds-perl libconfig-general-perl libhtml-parser-perl  libregexp-common-perl
 8. http://localhost/cgi-bin/collection.cgi
+9. I was using virtualbox and got 500 internal error so I checked /var/log/apache2/error.log. The reason for getting 500 
+   internal erro was the CGI not found, therefore sudo apt-get install libcgi-session-perl was very usefull
 
 
 Linux Kernel 201
