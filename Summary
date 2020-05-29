@@ -63,12 +63,13 @@ modprobe and modeprobe -r
 modinfo lists the modules information
 
 Kernel Automation and Configuration
+/proc/sys/kernel <----> sysctl.conf
+/etc/sysctl.conf    /etc/sysctl.d/* security hardening pakages
+/sbin/sysctl configuration on boot
+sysctl -a all configuration
+sysctl -w(write) the name of configuration 
 
-
-
-
-
-
+udev {lsusb, lspci, lsdev, dmesg} udevadm monitor
 
 
 
