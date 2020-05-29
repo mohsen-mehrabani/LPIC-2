@@ -70,6 +70,7 @@ sysctl -a all configuration
 sysctl -w(write) the name of configuration 
 
 udev {lsusb, lspci, lsdev, dmesg} udevadm monitor
+/etc/modprobe.d/ --> blacklist.conf 
 
 
 
