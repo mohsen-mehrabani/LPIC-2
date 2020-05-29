@@ -72,6 +72,13 @@ sysctl -w(write) the name of configuration
 udev {lsusb, lspci, lsdev, dmesg} udevadm monitor
 /etc/modprobe.d/ --> blacklist.conf 
 
+10 - Custom Kernel Compile  The Tools
 
+Download the kernel from http://www.kernel.org and extract to /usr/src
+make symbol link to linux with ls -s linux.*/ linux
+yum groups install "Development Tools" for centos
+yum install ncursors-devel qt-devel
+
+sudo apt-get install build-essential
 
 
