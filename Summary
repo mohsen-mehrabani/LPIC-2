@@ -75,11 +75,50 @@ udev {lsusb, lspci, lsdev, dmesg} udevadm monitor
 10 - Custom Kernel Compile  The Tools
 
 Download the kernel from http://www.kernel.org and extract to /usr/src
-make symbol link to linux with ls -s linux.*/ linux
-yum groups install "Development Tools" for centos
-yum install ncursors-devel qt-devel
+make a symbol link to linux with ln -s linux.*/ linux
+centos:yum groups install "Development Tools"
+       yum install ncursors-devel qt-devel
+ubuntu:sudo apt-get install build-essential
 
-sudo apt-get install build-essential
+11 - Custom Kernel Compile  Compilation and Installation
+
+make help
+make mrproper
+make xconfig for gui config for installing kernel
+make menuconfig text gui similar to xconfig 
+make oldconfig to use the current configuration kernel
+make bzImage about half an hour 
+make modules longest part, one and half an hour
+make modules_install this take all the modules we complied and put to /lib/modules 
+make install
+
+12 - SystemV Runlevels
+
+/etc/inittab is no longer use
+this is inittab for centos5:
+runlevel 0: halt
+runlevel 1: single user --> password recovery
+runlevel 2: multiuser, whitout NFS
+runlevel 3: full multiuser
+runlevel 4: unused
+runlevel 5: X11
+runlevel 6: reboot
+telinit 
+for ubunut:
+runlevel 0: halt
+runlevel 1: single user --> password recovery
+runlevel 2: xwindows or regular mode
+runlevel 3: unused
+runlevel 4: unused
+runlevel 5: unused
+runlevel 6: reboot
+
+
+
+
+
+
+
 
 SSH
 copy using ssh:sudo scp user@local:/path/to/file /path/to/destinition
