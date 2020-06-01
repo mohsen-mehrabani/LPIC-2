@@ -113,10 +113,27 @@ runlevel 4: unused
 runlevel 5: unused
 runlevel 6: reboot
 
+13 - SystemV Init Scripts
+/etc/init.d
+/etc/rc.d
+centos: chkconfig - updates and queries runlevel information for system services 
 
+ubuntu: update-rc.d - install and remove System-V style init script links
+update-rc.d [-n] [-f] name remove
+update-rc.d [-n] name defaults [NN | SS KK] (turn it on)
+update-rc.d  [-n]  name  start|stop  NN  runlevel [runlevel]...  .  start|stop NN runlevel (stop will delete all of the symbolic links)
+[runlevel]...  . ...
+update-rc.d [-n] name disable|enable [ S|2|3|4|5 ]
 
+14 - Upstart
 
+15 - Systemd
 
+16 - Recovering Legacy GRUB Installation
+
+17 - GRUB2 Recovery
+
+18 - Alternate Boot Loaders
 
 
 
