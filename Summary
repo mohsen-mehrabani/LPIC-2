@@ -135,6 +135,20 @@ update-rc.d [-n] name disable|enable [ S|2|3|4|5 ]
 
 18 - Alternate Boot Loaders
 
+19 - PXE Bootloader
+
+20 - Managing Linux Swap
+
+21 - Permanently Mounting Partitions
+
+22 - Maintaining EXT Filesystems
+
+23 - Fixing Corrupt EXT Filesystems
+
+24 - XFS Filesystems
+
+25 - S.M.A.R.T.
+
 
 
 SSH
