@@ -127,10 +127,28 @@ update-rc.d [-n] name disable|enable [ S|2|3|4|5 ]
 
 14 - Upstart
 
+/etc/init  configuration files
+/etc/init.d
+/etc/rc0-5.d
+
+ubuntu
+pre 2006    2006 - 14.04      (2019)15.10 
+SysV              Upstart        Systemd
+
+centos5        centos6           (2020)centos7
+SysV            Upstart            Systemd
+
 15 - Systemd
+
+systemctl list-unit-files --type=service
+/usr/lib/systemd/system services files location also in /etc/systemd/system that the services are linked to the previous address
 
 16 - Recovering Legacy GRUB Installation
 
+grub does not support ls but it's autocomplete
+help
+root
+kernel
 17 - GRUB2 Recovery
 
 18 - Alternate Boot Loaders
