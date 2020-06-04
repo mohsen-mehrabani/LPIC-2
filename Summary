@@ -146,10 +146,22 @@ systemctl list-unit-files --type=service
 16 - Recovering Legacy GRUB Installation
 
 grub does not support ls but it's autocomplete
-help
-root
-kernel
+help command
+we have to define three components to load linux: 1:root 2:kernel 3:initrd
+grub>root
+grub>kernel /tab(use autocomplete for finding vmlinuz) & root=/dev/sda*
+grub>initrd /initrs*
+grub>boot
+
 17 - GRUB2 Recovery
+we have to define three components to load linux: 1:root 2:kernel 3:initrd
+for setting roo use set command
+grub>set lists all variables
+grub>set root=*
+insted of kernel in legacy grub use linux
+grub>linux /boot/tab(look for vmlinuz) & root=sda*
+grub>initrd /boot/initrd*
+grub>boot
 
 18 - Alternate Boot Loaders
 
