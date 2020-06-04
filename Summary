@@ -165,6 +165,23 @@ grub>boot
 
 18 - Alternate Boot Loaders
 
+LiLo --> Linux Loader --> ext2/3 
+/etc/lilo.conf
+
+SysLinux          extlinux             isolinux
+  MsDos           MsDos or             cdrom
+                  ext2/3/4             isolinux.conf
+                                       isolinux.bin
+partition         partition            
+
+usb               often hard           create .iso
+                     drive                files
+extlinux installation
+apt-get install extlinux
+extlinux -i /boot/extlinux
+dd if(inputfile)=/usr/lib/EXTLINUX/mbr.bin of(outputfile)=/boot/sda
+reboot
+
 19 - PXE Bootloader
 
 20 - Managing Linux Swap
