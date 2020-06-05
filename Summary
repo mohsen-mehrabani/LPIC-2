@@ -166,7 +166,7 @@ grub>boot
 18 - Alternate Boot Loaders
 
 LiLo --> Linux Loader --> ext2/3 
-/etc/lilo.conf
+/etc/lilo.conf and /sbin/lilo
 
 SysLinux          extlinux             isolinux
   MsDos           MsDos or             cdrom
@@ -183,10 +183,44 @@ dd if(inputfile)=/usr/lib/EXTLINUX/mbr.bin of(outputfile)=/boot/sda
 reboot
 
 19 - PXE Bootloader
+PXE
+Pre-Boot Execution Environment
+https://docs.01.org/clearlinux/latest/get-started/ipxe-install.html
+
+KERNEL image The KERNELkeyword specifies an image file. This does not have to be an actual kernel image, but can be
+the name of the next stage bootprogram. SYSLINUX e.a. rely on filename extensions to decide on the file format.
+.0 is used with PXELINUX for the PXE NBP (Network Boot Program), with pxelinux.0 being the default.
+.bin used with ISOLINUX, and refers to the CD Boot Sector,
+.bs or .bss refer to (patched) DOS bootsectors [SYSLINUX].
+.com, .cbt, and .c32 are COMBOOT images (DOS,non-DOS,32 bit). For versions 5.00 and later c32 changed from
+COMBOOT to ELF binary format.
+.img is an ISOLINUX diskimage.
 
 20 - Managing Linux Swap
 
+swapon & swapoff for enabling and diabling swap file or swap partitions
+dd if=/swapfile of=/dev/sda*
+swapon
+
+using a file for swap
+root>dd if=/dev/zero of=/swapfile bs=1M count=*
+root>mkswap /swapfile
+root>swapon /swapfile
+root>swapon
+
 21 - Permanently Mounting Partitions
+mount a pendrive for example /dev/sdb1 on /mnt/test
+mkdri /mnt/test
+mkfs.ext4 /dev/dsb1 --> to format pendrive
+mount -t ext4 /dev/dsb1 /mnt/test
+umount
+For permanently mount use fstab
+/etc/sftab
+add the mount command to the file
+for an example 
+/dev/sdb1 /mnt/test defaults 0 0
+blkid show all block devices
+mtab is a file for information about mounted file
 
 22 - Maintaining EXT Filesystems
 
