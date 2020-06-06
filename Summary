@@ -223,12 +223,40 @@ blkid show all block devices
 mtab is a file for information about mounted file
 
 22 - Maintaining EXT Filesystems
+fsck - check and repair a Linux filesystem
+sbin/fsck
+tune2fs - adjust tunable filesystem parameters on ext2/ext3/ext4 filesystems
+-L lable a partition
 
 23 - Fixing Corrupt EXT Filesystems
 
+dumpe2fs - dump ext2/ext3/ext4 filesystem information
+sudo dumpe2fs /dev/sda* | grep superblock
+getting errors in mounting
+fsck /dev/sd* and there was a corruption we user this steps
+fsck -b(superblock) blocknumber /dev/sd* --> erros
+dumpe2fs /dev/sd* --> error
+mkfs.ext* -n /dev/sd* --> this comand will give you the superblocks
+fsck -b superblock number /dev/sd*
+
+
 24 - XFS Filesystems
+xfs and then tab for help
+centos/redhat use xfc
+fsck not support xfs
+xfs-repair
 
 25 - S.M.A.R.T.
+Self Monitoring Analysis Reporting Technology
+apt install smartmontools
+for installing smartctl & smartd
+smartctl -H(Health) /dev/sd*
+smartctl --test=short /dev/sd*
+smartctl -a (all) /dev/sd*
+vi /etc/default/smartmontools
+uncomment start-smartd=yes 
+service smartmontools start
+
 
 
 
