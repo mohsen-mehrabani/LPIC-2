@@ -271,7 +271,15 @@ mount
 ls /nfs/test
 
 27 - CDROM Filesystems
-
+ISO 9660: does not support long name (only CD not DVD)
+   Joliet: (microsoft) support long names and does not support permissions
+   Rock Ridge: suppoert permission
+   El Torito: support bootable CDs
+   
+   UDF Universal Disk Format (DVDs & CDs)
+   
+   mkisofs --help --> some important options -r --> Rock Ridge, -b File --> El Torito files ,-J  for Juliet support 
+   
 28 - Using RAID
 
 
