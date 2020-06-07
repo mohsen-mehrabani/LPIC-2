@@ -257,7 +257,11 @@ vi /etc/default/smartmontools
 uncomment start-smartd=yes 
 service smartmontools start
 
+26 - AutoFS
 
+27 - CDROM Filesystems
+
+28 - Using RAID
 
 
 SSH
