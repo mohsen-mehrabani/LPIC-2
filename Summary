@@ -258,6 +258,17 @@ uncomment start-smartd=yes
 service smartmontools start
 
 26 - AutoFS
+sudo apt-get install autofs
+la /etc/auto*
+autofs.conf auto.master auto.misc auto.net auto.smb
+vim auto.master-->
+add the location of our file to the end of the file
+/nfs /ect/auto.nfs --> now make the auto.nfs in /etc/
+vim /etc/auto.nfs --> mine for example: I'd like to mount the /nfstest/test.txt as /nfs/test 
+test 192.168.43.23:/nfstest
+sudo service autosf restart
+mount
+ls /nfs/test
 
 27 - CDROM Filesystems
 
