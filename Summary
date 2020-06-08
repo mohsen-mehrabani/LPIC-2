@@ -281,7 +281,18 @@ ISO 9660: does not support long name (only CD not DVD)
    mkisofs --help --> some important options -r --> Rock Ridge, -b File --> El Torito files ,-J  for Juliet support 
    
 28 - Using RAID
-
+ raid 0,1,5 I'd like to creat raid1 whit 2 disk
+ /dev/sdb /dev/sdc
+ first of all
+ cat /proc/mdstat
+ creat partition with fdisk (linux partition)
+ mdadm --creat --verbose /dev/md0 --raid-devices=2 --level=1 /dev/sdb1 /dev/sdc1
+ format the /dev/md0 with fdisk
+ mkfs.ext4 /dev/md0
+ cat /proc/mdstat
+ mdadm --detail --scan
+ mdadm --detail --scan > /etc/mdadm.conf 
+ 
 
 SSH
 copy using ssh:sudo scp user@local:/path/to/file /path/to/destinition
