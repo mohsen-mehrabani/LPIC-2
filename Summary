@@ -294,6 +294,15 @@ ISO 9660: does not support long name (only CD not DVD)
  mdadm --detail --scan > /etc/mdadm.conf 
  
 29 - Tuning Hard Drives
+ Hard Disks  1.IDE (/dev/hda) & 2.Sata (/dev/sda) / hdparm (hardware parameter)  3.SAS /sdparm (Scsi Drive) 
+ file systems (tune2fs)
+ sysctl (mnipulating file system using /proc file systems)
+ 
+ 
+ 
+ 
+ 
+ 
  
 30 - iSCSI
 
