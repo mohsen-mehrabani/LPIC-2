@@ -293,6 +293,10 @@ ISO 9660: does not support long name (only CD not DVD)
  mdadm --detail --scan
  mdadm --detail --scan > /etc/mdadm.conf 
  
+29 - Tuning Hard Drives
+ 
+30 - iSCSI
+
 
 SSH
 copy using ssh:sudo scp user@local:/path/to/file /path/to/destinition
