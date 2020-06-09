@@ -297,6 +297,12 @@ ISO 9660: does not support long name (only CD not DVD)
  
 30 - iSCSI
 
+31 - LVM
+
+32 - Configuring a Wired Network Device
+
+33 - Configuring Wireless Network Devices
+
 
 SSH
 copy using ssh:sudo scp user@local:/path/to/file /path/to/destinition
