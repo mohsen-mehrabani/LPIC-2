@@ -297,12 +297,7 @@ ISO 9660: does not support long name (only CD not DVD)
  Hard Disks  1.IDE (/dev/hda) & 2.Sata (/dev/sda) / hdparm (hardware parameter)  3.SAS /sdparm (Scsi Drive) 
  file systems (tune2fs)
  sysctl (mnipulating file system using /proc file systems)
- 
- 
- 
- 
- 
- 
+
  
 30 - iSCSI
 
@@ -311,6 +306,8 @@ ISO 9660: does not support long name (only CD not DVD)
 32 - Configuring a Wired Network Device
 
 33 - Configuring Wireless Network Devices
+
+34 - Network Troubleshooting
 
 
 SSH
