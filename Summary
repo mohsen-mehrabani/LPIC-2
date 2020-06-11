@@ -304,11 +304,71 @@ ISO 9660: does not support long name (only CD not DVD)
 31 - LVM
 
 32 - Configuring a Wired Network Device
+   route (print route table)
+   ip addr (print IP)
+   arp -a 
+   ifconfig -a
+   ifconfig eth* up
+   ifocnfig eth* IP
+   ifocnfig eth* netmask 255.255.255.0
+   route add default gw IP   & routr del default
+   
 
 33 - Configuring Wireless Network Devices
+   ifconfig wlan* up  
+   iwlist wlan* scan
+   iwconfig wlan* essid "ssid name"
+   dhclient wlan* (enable dhcp)
+   
 
 34 - Network Troubleshooting
+   netstat -tuna
+   nmap IP
+   tcpdump 
+   ifconfig 
+   inconfig -a
+   inconfig eth0:0 IP
+   
 
+35 - Compile and Install from Source
+   1.unzip the source
+   2. ./configure ( Be carefull to end the process whitout errors. If it occur, fix it)
+         After finishin ./configure you can run the app 
+   3. make install (It'll be install in /usr/local/bin Not /usr/bin becuase it is source not repository)
+   
+   Note: install build-essential (we used it for compiling kernel)
+
+
+36 - Backing Up Servers
+ Do backup         soso              Don't backup 
+ /etc/            /var/lib             /usr
+ /var/spool       /var/log
+ /home            /opt
+ /usr/local
+ 
+ Backup Pachages
+  Amanda    Bacula      BackupPc
+ Tape
+   /dev/st*
+   /dev/nst*
+   rewind
+   /usr/bin/mt
+  
+  tar -cvf BackupFileName destinition
+  tar -xvf BackupFileName (restore)
+  rsync -av desftinition-path source   rsync support ssh copy
+  
+
+37 System Notifications
+ wall file or echo "massage" | wall
+ /etc/motd (Message Of The Day)  (After log in)
+  
+ Local User    --> /etc/issuer      (Before log in)
+ Network Users --> /etc/issue.net       
+ Befor that you have to edit /etc/ssh/sshd-config looking for Banner and remove #
+ restart ssh service
+ put your massege in the /etc/issue.net 
+ 
 
 SSH
 copy using ssh:sudo scp user@local:/path/to/file /path/to/destinition
