@@ -129,7 +129,7 @@ update-rc.d [-n] name disable|enable [ S|2|3|4|5 ]
 
 /etc/init  configuration files
 /etc/init.d
-/etc/rc0-5.d
+/etc/rc0-5.ddev
 
 ubuntu
 pre 2006    2006 - 14.04      (2019)15.10 
@@ -301,6 +301,27 @@ ISO 9660: does not support long name (only CD not DVD)
 
  
 30 - iSCSI
+   yum install scsi-target-utils  (centos)
+   sudo apt install tgt 
+   /etc/tgt/targets.conf  edit
+      <target IP:target01>
+      backing-store /dev/md0 (e.g. My case)
+      incomiguser admin
+      </target>
+   restart tgt service
+   tgtadm --mode target --op show
+   centos: firewall-cmd --zone=public --add-port=3260/tcp --permanent
+           firewall-cmd reload
+   yum install iscsi-initiator-utils & ubuntu: apt install -y open-iscsi
+   /etc/iscsi/iscsid.conf  -->   check for node.startup = automatic
+                                 node.session.auth.username_in = admin
+                                 node.session.auth.password_in = admin
+   iscsiadm --mode discovery -t(type) sendtargets --portal 192.168.1.163 
+   iscsiadm --mode node --targetname ip:target01 --portal ip:port(3260) --login
+   ubuntu: /etc/init.d/open-iscsi restart
+   centos: 
+   ls /dev/sd* --> in my case sdd was added.      
+   
 
 31 - LVM
 
