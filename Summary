@@ -291,7 +291,8 @@ ISO 9660: does not support long name (only CD not DVD)
  mkfs.ext4 /dev/md0
  cat /proc/mdstat
  mdadm --detail --scan
- mdadm --detail --scan > /etc/mdadm.conf 
+ mdadm --detail --scan > /etc/mdadm/mdadm.conf (ubuntu)
+ sudo update-initramfs -u (If you do NOT this you'll definitely get md127 instead of md0 in /proc/mdstat ) 
  
 29 - Tuning Hard Drives
  Hard Disks  1.IDE (/dev/hda) & 2.Sata (/dev/sda) / hdparm (hardware parameter)  3.SAS /sdparm (Scsi Drive) 
