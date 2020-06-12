@@ -321,6 +321,8 @@ ISO 9660: does not support long name (only CD not DVD)
    ubuntu: /etc/init.d/open-iscsi restart
    centos: 
    ls /dev/sd* --> in my case sdd was added.      
+   ls /dev/disk/by-id
+   
    
 
 31 - LVM
