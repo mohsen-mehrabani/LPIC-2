@@ -337,7 +337,7 @@ ISO 9660: does not support long name (only CD not DVD)
    lvdisplay
    lvcreate --name (name) --size (size) /dev/vgName/lvName
    mount it --> mkfs.ext* 
-     
+   lvextend --help
    
 
 32 - Configuring a Wired Network Device
