@@ -326,6 +326,19 @@ ISO 9660: does not support long name (only CD not DVD)
    
 
 31 - LVM
+   1. Physical Volume -->  Volume Group --> Logical Volume
+   
+   pvdisplay
+   pvcreate
+   
+   vgdisplay
+   vgcreate
+   
+   lvdisplay
+   lvcreate --name (name) --size (size) /dev/vgName/lvName
+   mount it --> mkfs.ext* 
+     
+   
 
 32 - Configuring a Wired Network Device
    route (print route table)
