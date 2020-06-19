@@ -40,7 +40,7 @@ Linux LPI LPIC-2 Exam 202
     you can copy a db. file and rename it for both zone and reverse zones
     (Do Not Forget remane the serial)
     rndc reload for rloading the configurations
-    test whith dig @localhost ....
+    test whith dig @localhost .... and dig @localhost -x .. for reverse dns
     
   
   
