@@ -38,6 +38,7 @@ Linux LPI LPIC-2 Exam 202
   1. edit /etc/bind/named.conf.local  --> add zone & reverse zone
   2. create zones in /etc/bind/
     you can copy a db. file and rename it for both zone and reverse zones
+    (Do Not Forget remane the serial)
     rndc reload for rloading the configurations
     test whith dig @localhost ....
     
