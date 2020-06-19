@@ -27,9 +27,22 @@ Linux LPI LPIC-2 Exam 202
      BIND the importat dns for linux
      
 03. Caching Nameserver with BIND
+  1. Forwarding dns
+  2. Caching DNS
+  apt install bind9
+  /etc/bind/
+  /etc/bind/named.conf.options ---> add recursion yes; (It's necessary for running rndc and without that the named service won't run)
   
-      
-       
+  
+04. Creating and Maintaining DNS Zones with BIND 
+  1. edit /etc/bind/named.conf.local  --> add zone & reverse zone
+  2. create zones in /etc/bind/
+    you can copy a db. file and rename it for both zone and reverse zones
+    rndc reload for rloading the configurations
+    test whith dig @localhost ....
+    
+  
+  
        
         
   
