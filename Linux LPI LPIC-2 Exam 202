@@ -60,7 +60,38 @@ Linux LPI LPIC-2 Exam 202
             start service named
             
             
-            
+06. Securing BIND Server
+
+  /etc/bind/  -->
+   1. dnssec-keygen -a(algorithm) HMAC-MD5 -b(size) size -n(name) name -r(randomdev) /dev/urandom keyname
+       notes:
+            RSASHA1 will be used by default
+            HMAC keys must be between 1 and 512 bits.
+            -n nametype
+              Specifies the owner type of the key. The value of nametype must either be ZONE (for a DNSSEC zone key (KEY/DNSKEY)),
+              HOST or ENTITY (for a key associated with a host (KEY)), USER (for a key associated with a user(KEY)) or OTHER (DNSKEY).
+              These values are case insensitive. Defaults to ZONE for DNSKEY generation.
+   2. It'll create 2 keys, Kkeyname.key & Kkeyname.private. Copy Key in .private for the next.
+   3. create named.cong.tsig -->
+        key "keyname" {
+                        algorithm HMAC-MD5;
+                        secret "the sercret key";
+                        };
+   4. add in named.conf --> include "/etc/bind/named.conf.tsig";
+   5. named.conf.local --> edit allow-transfer { key "keyname"; };
+   6. reload rndc
+
+   On other server:
+   1. centos: /etc/named.conf --> add
+        key "keyname" {
+            algorthm HMAC-MD5;
+            secret "key";
+            };
+   2. server IP/hostname {
+            key { keyname; };
+            };
+   3. service named restart
+
             
             
                        
