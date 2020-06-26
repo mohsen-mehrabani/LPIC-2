@@ -99,7 +99,49 @@ Linux LPI LPIC-2 Exam 202
   3. rndc  restart
     It was really easy, I know
             
-                       
+08. Running BIND in a Chroot Jail - CBT Nuggets
+	In centos it is very easy 
+		yum install bind-chroot
+		/etc/sysconfig
+		cat named
+		/var/named/chroot
+			
+	In ubuntu you should configure it in APP Armor
+		/etc/default/bind9 add -t /var/named/chroot to options
+		mkdir -p /var/named/chroot
+		go to the /var/named/chroot directory
+		mkdir etc
+		mkdir dev
+
+
+09. Apache Web Server Installation and Setup - CBT Nuggets		
+				
+    package name 		redhat/centos		ubuntu/debian
+          httpd			apache2
+    config location	/etc/httpd/		/etc/apache2
+
+  Ubuntu/Debian
+
+    /etc/apache2/	apache2.conf	1.sites-enabled
+            2.mods-enabled						
+
+            1.sites-available
+            2.mods-available
+
+    httpd.conf		conf.d
+
+    apt install apache2
+      /var/www/html/index.html
+
+  Cenos/Redhat
+
+    yum install httpd
+    default configuration file:/etc/httpd/conf/httpd.conf
+    additional configuration files: /etc/httpd/conf.d
+    /var/www/html/index.html which does not exist index.html by default
+
+			 						
+		 						                    
     
        
         
