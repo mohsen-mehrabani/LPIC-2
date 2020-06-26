@@ -92,7 +92,12 @@ Linux LPI LPIC-2 Exam 202
             };
    3. service named restart
 
-            
+07.  Split DNS with BIND
+  1. Edit /etc/bind/named.conf.local 
+      add new zone
+  2. Create new db. for the new zone
+  3. rndc  restart
+    It was really easy, I know
             
                        
     
