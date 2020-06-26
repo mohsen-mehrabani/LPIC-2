@@ -17,3 +17,8 @@ To cut-and-paste or copy-and-paste:
     Press p to paste after the cursor, or P to paste before. 
     
 ***********************************************************
+Copy SSH
+scp user@local:/path/to/file /path/to/destinition
+ssh user@ip or hostname
+
+***********************************************************
