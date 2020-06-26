@@ -140,6 +140,45 @@ Linux LPI LPIC-2 Exam 202
     additional configuration files: /etc/httpd/conf.d
     /var/www/html/index.html which does not exist index.html by default
 
+10. Apache Modules & Languages - CBT Nuggets
+
+	For adding apache2's modules to ubuntu(php e.g.):
+		apt-cache search php | grep apache
+		find the pachage and install it
+		apt-get install libapache2-mod-php5
+		/etc/apache2/
+		ls mods-available --> you'll find php5.conf & load 
+		ls -l mods-available --> findig the symbolinc links
+
+
+11. Apache MPM Module (Multi-Process Modules)
+	1. Prefork (compatible, RAM consuming, needs for modules like PHP)
+	2. Worker (use threads, each childs has its children, memory efficient)
+	3. Event (newer, uses threads, handles different types of connections differently)
+	
+	configuration files:
+		/etc/apache2/mods-enabled/
+		  mpm_prefork.conf
+	
+	
+12. Apache Authentication and Redirection
+	separate from system auth 
+	e.g. username=test pass=Aa123qwe
+	1./etc/apache2/sites-enabled/000-default.conf -->
+		<Directory "/var/www/html/secret">
+			AuthType Basic
+			AuthName "the user name is test"
+			AuthUserFile /etc/apache2/testpass
+			Require valid-user
+		</Directory>
+	2.apt-get install apache2-utils
+	3.htpasswd -c /etc/apache2/testpass test 
+		It'll create the testpass file
+	4.apache2ctl restart or systemctl restart apache2
+	5.prepare the index.html file in /var/www/html/secret and policy
+	6./etc/apache2/sites-enabled/000-default.conf --> remove Directory -->
+		Redirect /secret /policy
+
 			 						
 		 						                    
     
