@@ -197,10 +197,32 @@ Linux LPI LPIC-2 Exam 202
 	4. For enabling these .conf files you can create two symbol links or
 	    use a2ensite ip and a2ensite name
 	5. if you cannot find the http://test2 add it is /etc/hosts
-			 						
-		 						                    
-    
-       
+		
+		
+		
+14. Apache SSL Setup
+	ssl: secure socket layer  
+	https: secure hyper text transfer protocol
+	cert file types:
+		1. Private key (never ever share private key)
+		2. Signed Public key 
+		3. CAS intermediate 	
+	In ubuntu it is installed by default
+	In centos:
+		yum search apache | grep ssl
+		mod_ssl.x86_64
+		config file -->
+			/etc/httpd/conf.d/ssl.conf
+				**important notes**
+					1.SSLEngine on
+					2.SSLcertificateFile
+					3.SSLCertificateKeyFile
+					4.produce our key and replace int the path
+						openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/httpd/myprivatekey.key
+						 -out /etc/httpd/mypubliccert.crt
+					5. replace the path of these files in nuber 3 & 4
+					6. /var/www/html   --> index.html
+					7. open the browser enjoy https://localhost
         
   
   
