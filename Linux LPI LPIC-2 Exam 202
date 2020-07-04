@@ -224,6 +224,14 @@ Linux LPI LPIC-2 Exam 202
 					6. /var/www/html   --> index.html
 					7. open the browser enjoy https://localhost
         
-  
+
+15. Squid Installation
+	apt-get install squid3
+		search for chace_mem
+		search cache_dir
+		retsart squid
+		squid proxy port 3128 
+		sudo wondershaper eth0 1024 1024 for creating bottleneck
+		
   
   
