@@ -234,4 +234,21 @@ Linux LPI LPIC-2 Exam 202
 		sudo wondershaper eth0 1024 1024 for creating bottleneck
 		
   
-  
+16. Squid ACLs
+	/etc/squid/squid.conf
+	ACL Elements
+	Access Lists
+
+
+17. Squid Authentication
+	
+	** Auth_param basic program /apt/squid/ncsa /etc/squid/passwd **
+	At the end of the TAG: auth_param in squid.conf add:
+		auth_param basic program /usr/lib/squid3/basic_ncsa_auth /etc/squid/passwords
+			you can find its location with locate command
+		A the acl section add --> acl AUTHENTICATED proxy_auth REQUIRED
+		Use this like an acl
+		save the file
+	htpasswd -c /etc/squid3(in my case squid)/passswords mypass ...
+	restart squid
+
