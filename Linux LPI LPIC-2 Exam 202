@@ -99,7 +99,7 @@ Linux LPI LPIC-2 Exam 202
   3. rndc  restart
     It was really easy, I know
             
-08. Running BIND in a Chroot Jail - CBT Nuggets
+08. Running BIND in a Chroot Jail 
 	In centos it is very easy 
 		yum install bind-chroot
 		/etc/sysconfig
@@ -114,7 +114,7 @@ Linux LPI LPIC-2 Exam 202
 		mkdir dev
 
 
-09. Apache Web Server Installation and Setup - CBT Nuggets		
+09. Apache Web Server Installation and Setup 		
 				
     package name 		redhat/centos		ubuntu/debian
           httpd			apache2
@@ -140,7 +140,7 @@ Linux LPI LPIC-2 Exam 202
     additional configuration files: /etc/httpd/conf.d
     /var/www/html/index.html which does not exist index.html by default
 
-10. Apache Modules & Languages - CBT Nuggets
+10. Apache Modules & Languages 
 
 	For adding apache2's modules to ubuntu(php e.g.):
 		apt-cache search php | grep apache
