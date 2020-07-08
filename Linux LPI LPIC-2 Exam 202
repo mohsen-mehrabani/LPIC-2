@@ -252,3 +252,8 @@ Linux LPI LPIC-2 Exam 202
 	htpasswd -c /etc/squid3(in my case squid)/passswords mypass ...
 	restart squid
 
+18. Nginx Installation and Configuration
+	apt install nginx
+	/etc/nginx/nginx.conf
+	/usr/share/nginx/html by default 
+
