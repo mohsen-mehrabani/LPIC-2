@@ -257,3 +257,22 @@ Linux LPI LPIC-2 Exam 202
 	/etc/nginx/nginx.conf
 	/usr/share/nginx/html by default 
 
+
+19. Nginx Reverse Proxy
+	look like Microsoft Threat Management Gateway (TMG)
+	/etc/nginx/sites-available/--> vim search.local
+		server {
+			listen 80;
+			server_name search.local;
+			
+			location / {
+			proxy_pass http://www.msn.com;
+			include /etc/nginx/proxy_params;
+			}
+			
+		}
+	
+	/etc/nginx/sites-enabled -->
+		ln -s ../sites-available/search.local .
+	
+	restart nginx
