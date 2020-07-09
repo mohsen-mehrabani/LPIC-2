@@ -276,3 +276,9 @@ Linux LPI LPIC-2 Exam 202
 		ln -s ../sites-available/search.local .
 	
 	restart nginx
+
+20. Samba Daemons
+	Server Message Blocks SMB protocol
+	NMBD Netbios Message Block Daemon
+	SMBD Server message Block Daemon
+	nmblookup NetBIOS over TCP/IP client used to lookup NetBIOS 			names
