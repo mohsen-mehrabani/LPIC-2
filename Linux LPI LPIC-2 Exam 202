@@ -281,4 +281,26 @@ Linux LPI LPIC-2 Exam 202
 	Server Message Blocks SMB protocol
 	NMBD Netbios Message Block Daemon
 	SMBD Server message Block Daemon
-	nmblookup NetBIOS over TCP/IP client used to lookup NetBIOS 			names
+	nmblookup NetBIOS over TCP/IP client used to lookup NetBIOS names
+	
+	
+21. Samba Installation
+	apt install samba
+		/etc/samba
+		vim /etc/samba/smb.conf
+		at the end
+			[folder name]
+			path= /foder name
+			guest ok = yes/no
+			read only = yes/no
+		mmkdir foldername
+		make sure you have gotten appropriate permission
+		smbstatus
+		net status shares 
+		/etc/samba/testparm
+		
+
+
+
+
+
