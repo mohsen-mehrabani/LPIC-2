@@ -290,7 +290,7 @@ Linux LPI LPIC-2 Exam 202
 		vim /etc/samba/smb.conf
 		at the end
 			[folder name]
-			path= /foder name
+			path = /foder name
 			guest ok = yes/no
 			read only = yes/no
 		mmkdir foldername
@@ -300,6 +300,20 @@ Linux LPI LPIC-2 Exam 202
 		/etc/samba/testparm
 		
 
+22. Samba Password Management
+	/etc/smb.conf
+		in global configuration / server string
+			add netbios name = servername
+			[data]
+			path = /data
+			valid users = asus
+			read only = no
+			create mask = 0777
+			directory mask = 0777
+		/#mkdir data	
+		chmod 777 data
+		smbpasswd -a (add) user
+		
 
 
 
