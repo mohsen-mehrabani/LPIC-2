@@ -316,5 +316,21 @@ Linux LPI LPIC-2 Exam 202
 		
 
 
+23. NFS  Network File System	
+
+	version 3: rpcbind & portmapper, tcp/udp, needs mount daemon
+	version 4: no rpcbind&portmapper, only tcp, does not need mount
+	
+	apt install nfs-kernel-server
+	not starting nfs daemon because no exports
+	vim /etc/exports
+		/nfsdata 	*(rw)
+			don't restart nfs daemon cause someone maybe 				used file server
+		exportfs -r (reread)
+		mkdir /nfsdata
+		chmod 777 /nfsdata
+		exportfs -r 
+		showmounf -e(export) localhost
+		
 
 
