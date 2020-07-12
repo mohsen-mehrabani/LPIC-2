@@ -330,7 +330,20 @@ Linux LPI LPIC-2 Exam 202
 		mkdir /nfsdata
 		chmod 777 /nfsdata
 		exportfs -r 
-		showmounf -e(export) localhost
+		showmount -e(export) localhost
+
+	on the other server
+		mkdir /nfsdata
+		chmod 777/nfsdata
+		vim /etc/fstab
+			192.168.43.120:/nfsdata nfsdata nfs defaults 0 0 
+		mount /nfsdata
+		touch test
+	onte the first server
+		cd /nfsdata
+		ls -l 
+		see the test1		
 		
+
 
 
