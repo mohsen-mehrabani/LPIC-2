@@ -346,4 +346,65 @@ Linux LPI LPIC-2 Exam 202
 		
 
 
-
+24. DHCP
+	Dynamic Host Configuration Protocol
+	ubuntu isc-dhcp-server (Internet Systema Consortium)
+	centos dhcpd
+	
+	vim /etc/default/isc-dhcp-server
+		INTERFACES="the Interface name you want"
+	vim /etc/dhcp/dhcpd.conf
+		option domain-name "name"
+		option domain-name-servers ourdns;
+		unncomment subnet range route and checge to your configuration
+	restart the service
+	/var/lib/dhcp/dhcpd.leases
+	
+	
+	
+25. DHCP Static Entries & Relay Hosts	
+	for static dhcp:
+		vim /etc/dhcp/dhcpd.conf
+			host servername-static {
+				hardware ethernet 00:00:00:00:00:00;
+				fixed-addrress IP;
+				}
+		restart the service
+		unplug&plug the netowrk
+	
+	for relay:
+		we need two server and three seprate broadcast network
+		One server as dhcp and the other as relay server
+		There is need to define a route to transmit the dhcp rquest packages.
+		
+		on the dhcp server
+			add another range to dhcpd.conf
+				the first one was:
+					subnet 10.10.10.0 netmask 255.255.255.0 {
+						range 10.10.10.100 10.10.10.150;
+						option routers 10.10.10.1;
+					}
+				the second one is:
+					subnet 172.20.1.0 netmask 255.255.255.0 {
+						range 172.20.1.100 172.20.1.150;
+						option routers 172.20.1.1;
+						}
+			
+			restart the service
+			route add -net 172.20.1.0/24 gw 10.10.10.200 dev eth1 (example)
+			route -n
+			
+			on hte first server:
+				eth0 10.10.10.200
+				eth1 172.20.1.4
+			on the second server (relay) (E.g. centos)
+				yum install dhcpd
+				/etc/sysconfig/dhcprelay
+					DHCPSERVERS="10.10.10.200"
+			
+			test on the 172.20.1 rage systems:
+				the machine got 172.20.1.100 
+				
+			on the dhcp server:
+					cat /var/lib/dhcp/dhcpd.leases
+					check for the tested machine record
