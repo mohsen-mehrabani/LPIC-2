@@ -402,9 +402,46 @@ Linux LPI LPIC-2 Exam 202
 				/etc/sysconfig/dhcprelay
 					DHCPSERVERS="10.10.10.200"
 			
-			test on the 172.20.1 rage systems:
+			test on the 172.20.1 range systems:
 				the machine got 172.20.1.100 
 				
 			on the dhcp server:
 					cat /var/lib/dhcp/dhcpd.leases
 					check for the tested machine record
+
+26. PAM Configuration
+	Plugable Authentication Password
+		/etc/pam.conf
+		service 	type 	control 	module-path 	module-arguments
+		
+			Service: This is the name of the application involved, for example: login, ssh or passwd.
+			
+			types:
+				Account: Provide account verification types of service: has the user’s password expired? Is this user permitted 						 access to the requested service?
+				Authentication: Establish if the user really is whom he claims to be. This can be done, for example, by asking a 							 password or,given the right module, by reading a chip-card or by performing a retinal or 							 fingerprint scan.
+				Password: This group’s responsibility is the task of updating authentication mechanisms. Typically, such services 						  are strongly coupled to those of the authentication group. Some authentication mechanisms lend themselves 					  well to being updated.The user might be presented with a question like “Please enter the new password”.
+				Session: This group of tasks covers things that should be done prior to a service being offered and after it is 						 withdrawn. Such tasks include the maintenance of audit trails and the mounting of the user’s home 						 directory.The session management group is important as it provides both an opening and closing hook for 						 modules that affect the services available to a user.
+			
+			Control: This field indicates what the PAM-API should do in case authentication fails for any module.
+				 THE ARE FOUR VALID VALUES FOR THE CONTROL FIELD :
+				 
+				Requisite: Upon failure, the authentication process will be terminated immediately.
+				Required: This will return failure after the remaining modules for this service and type have been invoked.
+				Sufficient: Upon success, the authentication process will be satisfied, unless a prior required module has failed 						    the au-thentication.
+				Optional: The success or failure of this module is only important if this is the only module associated with this 						  service and this type.
+				
+			Module-path: This is the filename, including the full path, of the PAM that is to be used by the application.
+					examples: LDAP & Passwd
+
+			Module-arguments: These are module specific arguments, separated by spaces, that are to be passed to the module. 
+
+27. PAM Modules
+	pam_cracklib.so
+	pam_unix.so
+	pam_listfile.so
+	pam_limits.so
+	nsswitch.conf
+	
+	
+		
+	
