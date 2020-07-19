@@ -436,12 +436,87 @@ Linux LPI LPIC-2 Exam 202
 			Module-arguments: These are module specific arguments, separated by spaces, that are to be passed to the module. 
 
 27. PAM Modules
-	pam_cracklib.so
-	pam_unix.so
+	pam_cracklib.so 
+		PAM module to check the password against dictionary words 
+		Examples
+
+			For an example of the use of this module, we show how it may be stacked with the password component of pam_unix(8)
+
+			    #
+			    # These lines stack two password type modules. In this example the
+			    # user is given 3 opportunities to enter a strong password. The
+			    # "use_authtok" argument ensures that the pam_unix module does not
+			    # prompt for a password, but instead uses the one provided by
+			    # pam_cracklib.
+			    #
+			    passwd  password required       pam_cracklib.so retry=3
+			    passwd  password required       pam_unix.so use_authtok
+
+			Another example (in the /etc/pam.d/passwd format) is for the case that you want to use md5 password encryption:
+
+			    #%PAM-1.0
+			    #
+			    # These lines allow a md5 systems to support passwords of at least 14
+			    # bytes with extra credit of 2 for digits and 2 for others the new
+			    # password must have at least three bytes that are not present in the
+			    # old password
+			    #
+			    password  required pam_cracklib.so \
+					   difok=3 minlen=15 dcredit= 2 ocredit=2
+			    password  required pam_unix.so use_authtok nullok md5
+
+			And here is another example in case you don't want to use credits:
+
+			    #%PAM-1.0
+			    #
+			    # These lines require the user to select a password with a minimum
+			    # length of 8 and with at least 1 digit number, 1 upper case letter,
+			    # and 1 other character
+			    #
+			    password  required pam_cracklib.so \
+					   dcredit=-1 ucredit=-1 ocredit=-1 lcredit=0 minlen=8
+			    password  required pam_unix.so use_authtok nullok md5
+
+
 	pam_listfile.so
+		deny or allow services based on an arbitrary file 
+		Examples
+
+			Classic 'ftpusers' authentication can be implemented with this entry in /etc/pam.d/ftpd:
+			    #
+			    # deny ftp-access to users listed in the /etc/ftpusers file
+			    #
+			    auth    required       pam_listfile.so \
+				    onerr=succeed item=user sense=deny file=/etc/ftpusers
+
+			Note, users listed in /etc/ftpusers file are (counterintuitively) not allowed access to the ftp service.
+
+			To allow login access only for certain users, you can use a /etc/pam.d/login entry like this:
+			    #
+			    # permit login to users listed in /etc/loginusers
+			    #
+			    auth    required       pam_listfile.so \
+				    onerr=fail item=user sense=allow file=/etc/loginusers
+
 	pam_limits.so
-	nsswitch.conf
-	
-	
+		PAM module to limit resources 
 		
+		Examples
+
+			For the services you need resources limits (login for example) put a the following line in /etc/pam.d/login as the last 				line for that service (usually after the pam_unix session line):
+
+			    #%PAM-1.0
+			    #
+			    # Resource limits imposed on login sessions via pam_limits
+			    #
+			    session  required  pam_limits.so
+
+			Replace "login" for each service you are using this module. 
+	
+	
+	nsswitch.conf
+		Name Service Switch configuration file
+			https://www.man7.org/linux/man-pages/man5/nsswitch.conf.5.html
+		
+	
 	
