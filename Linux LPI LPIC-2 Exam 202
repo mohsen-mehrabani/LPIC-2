@@ -542,5 +542,17 @@ Linux LPI LPIC-2 Exam 202
 	ldapdelete: is a shell-accessible interface to the ldap_delete_ext(3) library call.
 		    opens a connection to an LDAP server, binds, and deletes one or more entries. If one or more DN arguments are
 		    provided, entries with those Distinguished Names are deleted.
-
-
+		    
+	Ubuntu: apt install slapd ldap-utils
+		dpkg-reconfigure slapd
+		slapcat -b cn=config
+		prepare a ldif file to add   
+			https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system
+			https://docs.oracle.com/cd/E10773_01/doc/oim.1014/e10531/ldif_appendix.htm
+		stop slapd
+		slapadd -l(ldif) name.ldif
+		
+	centos : yum install openldap openldap-servers openldad-clients
+		/etc/ldap/openldap-->ldap.conf do't change anything
+		vim slapd.conf
+		
