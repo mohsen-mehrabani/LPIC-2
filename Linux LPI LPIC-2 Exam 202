@@ -519,4 +519,28 @@ Linux LPI LPIC-2 Exam 202
 			https://www.man7.org/linux/man-pages/man5/nsswitch.conf.5.html
 		
 	
+28. LDAP Server Installation
+	Lightweight Directory Access Protocol.
 	
+	entry : A single unit within an LDAP directory. Each entry is identified by its unique Distinguished Name (DN).
+	attributes: Information directly associated with an entry.
+	LDIF: The LDAP Data Interchange Format (LDIF) is an ASCII text representation of LDAP entries. Files used for importing
+		data to LDAP servers must be in LDIF format. An LDIF entry looks similar to the following example:
+		[<id>]
+		dn: <distinguished name>
+		<attrtype>: <attrvalue>
+		<attrtype>: <attrvalue>
+		<attrtype>: <attrvalue>
+	
+	ldapsearch: is a shell-accessible interface to the ldap_search(3) library call. ldapsearch opens a connection to an LDAP server,
+		    binds, and performs a search using specified parameters.
+	ldappasswd: Change the password of an LDAP entry
+		    ldappasswd is a tool to set the password of an LDAP user. ldappasswd uses the LDAPv3 Password Modify (RFC 3062) extended
+		    operation.
+	ldapadd: is implemented as a link to the ldapmodify tool. When invoked as ldapadd the -a (add new entry) flag is turned on
+		  automatically.
+	ldapdelete: is a shell-accessible interface to the ldap_delete_ext(3) library call.
+		    opens a connection to an LDAP server, binds, and deletes one or more entries. If one or more DN arguments are
+		    provided, entries with those Distinguished Names are deleted.
+
+
