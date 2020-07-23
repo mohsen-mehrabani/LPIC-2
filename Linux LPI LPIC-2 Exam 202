@@ -325,7 +325,7 @@ Linux LPI LPIC-2 Exam 202
 	not starting nfs daemon because no exports
 	vim /etc/exports
 		/nfsdata 	*(rw)
-			don't restart nfs daemon cause someone maybe 				used file server
+			don't restart nfs daemon cause someone maybe is using file server
 		exportfs -r (reread)
 		mkdir /nfsdata
 		chmod 777 /nfsdata
@@ -556,3 +556,24 @@ Linux LPI LPIC-2 Exam 202
 		/etc/ldap/openldap-->ldap.conf do't change anything
 		vim slapd.conf
 		
+29. LDAP Client Tools
+	examples:
+		ldapsearch -h hostname -x(simple authentication) -b(base of search) dc=text,dc=com
+		ldapsearch -h hostname -x(simple authentication) -D(who wants this information)  cn=admin,dc=test,dc=com -W(show passwords too) -b(base of search) dc=text,dc=com
+			this will add what is inside the user.ldif to the ldap
+		ldapadd -h hostname -x(simple authentication) -D(who wants this information) cn=admin,dc=test,dc=com -w password -f(file) user.ldif
+			change the password of user
+		ldappsswd -h hostname -x -D cn=admin,dc=test,dc=com -w passsword -S uid=user,ou=users,dc=test,dc=com
+		--??> new password:....
+			delete a user
+		ldapdelete -h hostname -x -D cn=admin,dc=test,dc=com -W uid=user,ou=users,dc=test,dc=com
+		--??> enter ldap password:....
+		
+		SSSD - System Security Services Daemon
+		SSSD is a system daemon. Its primary function is to provide access to local or remote identity and authentication resources through a common 
+			framework that can provide caching and offline support to the system. It provides several interfaces, including NSS and PAM modules or
+			a D-Bus interface.
+			
+
+
+
