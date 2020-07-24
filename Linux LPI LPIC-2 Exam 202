@@ -574,6 +574,14 @@ Linux LPI LPIC-2 Exam 202
 			framework that can provide caching and offline support to the system. It provides several interfaces, including NSS and PAM modules or
 			a D-Bus interface.
 			
+30. Postfix (Email) Server Config
+	apt install postfix mailutils
+		/etc/postfix/main.cf
+		vim /etc/aliases --> root: user (this redirext root emails to user)
+		sendmail
+			postfix to sendmail compatibility interface
+			important -bp show queue as well as mailq
+			
 
 
 
