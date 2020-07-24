@@ -608,5 +608,25 @@ Linux LPI LPIC-2 Exam 202
 		     	you can make recipes with regular expressions
 
 
+32. Remote Email Delivery
+	1. Courier
+		apt-cache search courier | grep courier
+		choose the imap and pop only and install them
+		/etc/courier
+			imapd and pop3d
+				imapd --> MAILDIRPATH=mail/inbox
+				pop3d --> MAILDIRPATH=mail/inbox	
+			restart both services
+				
+	2. Dovecot	
+		apt-cache search dovecot
+		apt-get install dovecot-imapd devoecot-pop3d
+		accept self signed certificate
+		/etc/deoecot.conf
+		vim /etc/dovecot/conf.d/10-mail.conf --> 
+			mail_location = maildir:~/mail/inbox
+		restart voecot
+		netstate -tuna | grep 100
+		netstate -tuna | grep 143
 
 
