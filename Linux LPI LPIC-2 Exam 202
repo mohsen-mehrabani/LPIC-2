@@ -584,4 +584,29 @@ Linux LPI LPIC-2 Exam 202
 			
 
 
+31. Procmail for Local Email
+	postfix default folder
+		/var/spool/mail
+	apt install procmail
+	postconf --> showing all the postfix configurations
+	postfong -e "configuration" no need to restart the service
+	 
+	Two ways  to configure procmail
+		one: Global configuration
+			create /etc/procmailrc -->
+				MAILDIR=$HOME/mail
+				DEFAULT=&HOME/mail/inbox
+			restart the service
+			mkdir $HOME/mail
+			***makel rule** (named here recipe :-)     
+		     vim .procmailrc -->
+		     	:0:
+		     	* ^Subject:.test
+		     	testfile
+		     	:wq
+		     	this make a test file folder alongsilde ibox and put the emails including test in subjects to this folder
+		     	you can make recipes with regular expressions
+
+
+
 
