@@ -34,3 +34,4 @@ Static IP ubuntu servers
     and also create
       vim /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg -->
       network: {config:disabled}
+ netplan apply
