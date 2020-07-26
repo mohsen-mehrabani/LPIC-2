@@ -61,5 +61,6 @@ Static IP ubuntu servers
     DEVICE=eth0
     ONBOOT=yes
 2.
-    nmtui
+    nmtui centos 7
+    system-config-network-tui centos 6
 ***********************************************************
