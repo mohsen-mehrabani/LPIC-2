@@ -630,3 +630,20 @@ Linux LPI LPIC-2 Exam 202
 		netstate -tuna | grep 143
 
 
+33. NAT Routing
+	chains:
+				forward				postrouting
+		prerouting	
+				input  	(local machine) 	output
+				
+	policies: 1.accept	 2.drop	3.reject	4.log	5.masqurade
+	
+	every chain has a defult policy
+	every chain has tables
+	tables: 1.nat	2.filter 3.mangle
+	
+	echo "1">/proc/sys/net/ipv4/ip_forward
+	iptables --table nat --append POSTROUTING --out-interface eth* -j MASQUERADE
+	iptables --append FORWARD --in-interface eth* -j ACCEPT
+
+
