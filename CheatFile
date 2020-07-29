@@ -64,3 +64,10 @@ Static IP ubuntu servers
     nmtui centos 7
     system-config-network-tui centos 6
 ***********************************************************
+
+iptables -t nat -v -L PREROUTING -n --line-number
+iptables -t nat -v -L -n --line-number
+iptables -t nat -D PREROUTING {rule-number-here}
+
+***********************************************************
+
