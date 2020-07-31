@@ -693,4 +693,12 @@ Linux LPI LPIC-2 Exam 202
 		look for pure-ftp -h for configuration
 
 
+36. SSH Server Setup
+	secure shell server
+	apt-get isnstall openssh-server
+	/etc/ssh/sshd_config
+		PermitRootLogin yes --> to login with root 
+		service ssh restart
+
+
 
