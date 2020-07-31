@@ -3,7 +3,7 @@ Linux LPI LPIC-2 Exam 202
 01. Introduction
 
 02. DNS Server Options
-  nslookup host dig dig @server site (without www)
+  nslookup host dig dig @server site (without www) 
   
   DNS
     1. djbdns 
@@ -654,3 +654,19 @@ Linux LPI LPIC-2 Exam 202
 					
 						now we are able to ping 10.10.10.100 in second ubuntu
 						
+34. Packet Filtering with iptables
+	examples:
+		iptables -A(--append ) OUTPUT/INPUT -d(destination)/-s(source) -j(jump) DROP/REJECT
+				
+		redirect: iptables -A PREROUTING -t nat -i(--in-interface) eth* -p tcp --dport 8000 -j REDIRECT --to-port 80
+	iptables-persistent for saving the rules 
+		ubutnu:
+			(config file)/etc/iptables/rules.v4
+			iptables-save>/etc/iptables/rules.v4		
+		centos:
+			service name : iptables
+			/etc/sysconfig	
+			iptables-save
+
+
+
