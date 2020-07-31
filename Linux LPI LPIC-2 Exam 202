@@ -669,4 +669,28 @@ Linux LPI LPIC-2 Exam 202
 			iptables-save
 
 
+35. FTP Server Setup
+	(Active ftp and Passive ftp)
+	Active ftp:
+		client will send a requset on port 2263 and the server will get in on the port 21
+		then server will send the data on port 22 and the the client will get it on the port 2264
+		It has the firewall problem
+	Passive ftp:
+		client will send a requset on port 2263 and the server will get in on the port 21
+		then server reply it in the same port asking for makinf new port for sending data 
+		the client will send go on the new port for getting data in server on a new port not 21
+		it'll fix the firewall problem
+		
+	vsftp
+		very secureftp
+		apt-cache search vsftp
+			-->> apt install vsftpd
+			     config file: /etc/vsftp.conf
+		how to connect:
+			ftp servername
+	pure-ftp
+		it does not have config file
+		look for pure-ftp -h for configuration
+
+
 
