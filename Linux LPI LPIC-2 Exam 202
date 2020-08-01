@@ -699,6 +699,7 @@ Linux LPI LPIC-2 Exam 202
 	/etc/ssh/sshd_config
 		PermitRootLogin yes --> to login with root 
 		service ssh restart
-
-
-
+		If does not work, passwd wil rescue you
+		
+	
+	
