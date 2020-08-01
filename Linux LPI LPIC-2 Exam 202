@@ -735,3 +735,29 @@ Linux LPI LPIC-2 Exam 202
 		5. www.openAVS.org
 			vulnerability scanner
 		6.fail2ban
+
+39 OpenVPN
+	centos7 server:
+		yum install epel-release
+		yum search openvpn	
+		yum install openvpn
+			openvpn --genkey --sercret centos7key.key
+			scp centos7key.key root@ubunut
+			/root/
+				centos7key.key 
+				vim server.conf -->
+					dev tun
+					ifconfig 10.1.1.1 10.1.1.2
+					secret centos7key.key
+			ls--> centos7key.key & server.conf
+			openvpn --config server.conf
+			it'll create tun0 with 10.10.10.1 ip
+	ubuntu client:
+		/root/
+			centos7key.key
+			vim client.conf -->
+				remote my ubuntu eht0 IP
+				dev tun
+				ifconfig 10.1.1.2 10.1.1.1
+				secret centos7key.key
+			openvpn --config client.conf
