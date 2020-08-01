@@ -703,3 +703,13 @@ Linux LPI LPIC-2 Exam 202
 		
 	
 	
+37. SSH Keys
+	
+	client: ~ /.shh (known_hosts id_rsa id_rsa.pub)
+	server: ~ ./ssh (authorized_keys)
+	ssh-keygen -->
+		it'll make the id_rsa and id_rsa.pub
+		ssh-copy-id -i .ssh/id_rsa.pub user@server  **it'll copy the pub key to the authorized_keys**
+          								**It'll work for only the user**
+
+
