@@ -713,3 +713,25 @@ Linux LPI LPIC-2 Exam 202
           								**It'll work for only the user**
 
 
+38. Security Tools
+	Websites:
+		1. Bugtraq 
+			securityfocus.com
+		2. Cert.org
+			Federally founded
+		3. CIAC
+			energy.gov
+			inforation on white hat audits
+			Bultines, etc., are free
+	Tools:
+		1. nc (netcat) arbitrary TCP and UDP connections and listens
+			nc -zv localhost 100-110
+		2.nmap Network exploration tool and security / port scanner
+			nmap localhost scan for common ports is open or not 
+		3.telnet 
+		
+		4. www.Snort.com
+			intrusion detection system
+		5. www.openAVS.org
+			vulnerability scanner
+		6.fail2ban
