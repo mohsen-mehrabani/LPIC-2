@@ -70,4 +70,9 @@ iptables -t nat -v -L -n --line-number
 iptables -t nat -D PREROUTING {rule-number-here}
 
 ***********************************************************
-
+ubuntu sound not working
+uname -r 
+  
+sudo apt-get install build-essential linux-headers-[uname -r] alsa-base alsa-firmware-loaders alsa-oss alsa-source alsa-tools alsa-tools-gui alsa-utils alsamixergui
+sudo usermod -a -G audio [user name]
+reboot
