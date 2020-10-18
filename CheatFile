@@ -76,3 +76,6 @@ uname -r
 sudo apt-get install build-essential linux-headers-[uname -r] alsa-base alsa-firmware-loaders alsa-oss alsa-source alsa-tools alsa-tools-gui alsa-utils alsamixergui
 sudo usermod -a -G audio [user name]
 reboot
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>Page_Down']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>Page_Up']"
+
