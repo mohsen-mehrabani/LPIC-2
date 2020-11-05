@@ -79,3 +79,20 @@ reboot
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>Page_Down']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>Page_Up']"
 
+***********************************************************
+
+#Github 
+
+#Push
+git init 
+git add .
+git config user.email "email address"
+git commit -m "Initial commit"
+git remote add origin Github repository Url 
+git push origin master
+
+#pull
+git init
+git remote add origin github repository Url
+git pull origin master
+
