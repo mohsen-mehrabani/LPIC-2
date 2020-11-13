@@ -1,3 +1,6 @@
+#systeminformation
+cat /etc/os-release 
+*********************************************************** 
 rename ubuntu
   1. edit /etc/hostname
   2. edit /etc/cloud/cloud.cfg --> preserve_hostname: true
