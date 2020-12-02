@@ -1,5 +1,9 @@
 #systeminformation
 cat /etc/os-release 
+
+lsb_release -dirc
+
+dpkg -l | grep something
 *********************************************************** 
 rename ubuntu
   1. edit /etc/hostname
