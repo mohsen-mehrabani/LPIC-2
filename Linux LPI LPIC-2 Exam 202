@@ -713,6 +713,18 @@ Linux LPI LPIC-2 Exam 202
           								**It'll work for only the user**
 
 
+	******* Note *******
+	If you get Permission denied (publickey) you should do these steps:
+	1. you need to copy you id_rsa.pub key on the remote machine whith ssh-copy-id -i .ssh/id_rsa.pub user@server
+ 	2. Permission denied (publickey) won't let you to do this so:
+		*. on the remote machine --> sudo nano /etc/ssh/sshd_config -->> set PasswordAuthentication yes
+		*. on the remote machine --> passwd root > set password
+		*.on the remote machine restart ssh
+			now you can copy either with ssh-copy-id -i .ssh/id_rsa.pub user@server or login as root
+
+	
+
+
 38. Security Tools
 	Websites:
 		1. Bugtraq 
